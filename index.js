@@ -1,52 +1,57 @@
 var inherits = require('inherits')
 var domify = require('domify')
-var events = require('dom-events')
 var insert = require('insert')
 var css = require('dom-css')
 var attr = require('./lib/attr')
+var html = require('./lib/html')
+var classes = require('dom-classes')
 
 module.exports = Elle
 function Elle(element) {
     if (!(this instanceof Elle))
         return new Elle(element)
-
-    this[0] = typeof element === 'string' 
-        ? domify(element)
-        : document.createElement('div')
+    this[0] = toElement(element) || document.createElement('div')
 }
 
 //for a jQuery like array dereference we will inherit from Array
 inherits(Elle, Array)
 
+var Proto = Elle.prototype
+
 //getters/setters
-Object.defineProperty(Elle.prototype, 'element', {
+Object.defineProperty(Proto, 'view', {
     get: function() {
         return this[0]
-    }
+    },
+    enumerable: true,
+    configurable: true
 })
 
-//mixin events
-;['on', 'once', 'off'].forEach(function(name) {
-    Elle.prototype[name] = wrap(events[name])
-})
+//class mixins
+Proto.removeClass = wrap(classes.remove)
+Proto.addClass = wrap(classes.add)
+Proto.toggleClass = wrap(classes.toggle)
 
-//other mixins
-Elle.prototype.css = wrap(css)
-Elle.prototype.attr = wrapGetter(attr)
+Proto.hasClass = function(name) {
+    return classes.has(this[0], name)
+}
+
+//misc utils
+Proto.css = wrap(css)
+Proto.html = property(html)
+Proto.attr = property(attr, 1)
 
 //mixin inserts
-;['remove', 'prepend', 'append', 'before', 'after']
+;['remove', 'prepend', 'append', 'before', 'after', 'replace']
     .forEach(function(name) {
-        Elle.prototype[name] = wrap(insert[name], toElement)
+        Proto[name] = wrap(insert[name], toElement)
     })
 
-Elle.prototype.replace = wrap(insert.replace)
-
 //mixin inserts with a target
-Elle.prototype.appendTo = wrapTarget(insert.append)
-Elle.prototype.prependTo = wrapTarget(insert.prepend)
-Elle.prototype.insertBefore = wrapTarget(insert.before)
-Elle.prototype.insertAfter = wrapTarget(insert.after)
+Proto.appendTo = wrapTarget(insert.append)
+Proto.prependTo = wrapTarget(insert.prepend)
+Proto.insertBefore = wrapTarget(insert.before)
+Proto.insertAfter = wrapTarget(insert.after)
 
 //always returns this for chaining
 function wrap(fn, map) {
@@ -60,22 +65,26 @@ function wrap(fn, map) {
 }
 
 //single argument --> return value
-function wrapGetter(fn) {
+function property(fn, expected) {
     return function(...args) {
         var a = [this[0], ...args]
         var ret = fn(...a)
-        return args.length===1 ? ret : this
+        return args.length===(expected|0) ? ret : this
     }
 }
 
 //for insert/remove/etc
 function wrapTarget(fn) {
     return function(target) {
-        fn(target, this[0])
+        fn(toElement(target), this[0])
         return this
     }
 }
 
 function toElement(e) {
-    return typeof e === 'string' ? domify(e) : e
+    if (typeof e === 'string')
+        return domify(e)
+    else if (e && e.view && e.view.nodeType)
+        return e.view
+    return e
 }

@@ -1,13 +1,11 @@
 //An example of using events
-
 var test = require('tape')
-var elle = require('../')
+var elle = require('./elle-event')
 
-var css = require('dom-css')
 var body = document.body
 
 test("accepts double click", function(t) {
-    var btn = elle('double-click to continue test')
+    var btn = elle('<div>double-click to test events</div>')
     
     btn.appendTo(document.body).css({
         position: 'absolute',
