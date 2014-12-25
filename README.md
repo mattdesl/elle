@@ -2,14 +2,14 @@
 
 [![stable](http://badges.github.io/stability-badges/dist/stable.svg)](http://github.com/badges/stability-badges)
 
-A DOM utility that wraps a few common features:
+A DOM utility that wraps a few common features in a chainable structure:
 
 - construct from string template (see [domify](https://www.npmjs.com/package/domify))
 - set CSS styling (see [dom-css](https://www.npmjs.com/package/dom-css))
 - insertion/removal (see [insert](https://www.npmjs.com/package/insert))
 - add/remove classes (see [dom-classes](https://www.npmjs.com/package/dom-classes))
-- chainable `html()` getter/setter for `innerHTML`
-- chainable `attr()` getter/setter for `setAttribute`
+- `html()` getter/setter for `innerHTML`
+- `attr()` getter/setter for `setAttribute`
 
 Other features are left up to the user to implement or extend (see [examples/](examples/)). 
 
