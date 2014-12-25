@@ -33,6 +33,10 @@ Proto.css = wrap(css)
 Proto.html = property(html)
 Proto.attr = property(attr, 1)
 
+Proto.parent = function() {
+    return this[0].parentNode
+}
+
 //class mixins
 Proto.hasClass = function(name) {
     return classes.has(this[0], name)
@@ -55,6 +59,7 @@ Proto.appendTo = wrapTarget(insert.append)
 Proto.prependTo = wrapTarget(insert.prepend)
 Proto.insertBefore = wrapTarget(insert.before)
 Proto.insertAfter = wrapTarget(insert.after)
+
 
 //always returns this for chaining
 function wrap(fn, map) {

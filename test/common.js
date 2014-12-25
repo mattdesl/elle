@@ -9,6 +9,8 @@ test('common methods', function(t) {
     btn.appendTo(body)
     t.equal(body.contains(btn.view), true, 'appendTo()')
 
+    t.equal(btn.parent(), body, 'parent()')
+
     btn.attr('data-foo', '25')
     t.equal(btn.attr('data-foo'), '25', 'attr() setter/getter')
 
@@ -23,6 +25,10 @@ test('common methods', function(t) {
     btn.html('')
     btn.append(btn2[0])
     t.equal(btn.html(), '<a href="#">blank</a>', 'append() element')
+    
+    btn.html('')
+    btn.append(btn2)
+    t.equal(btn.html(), '<a href="#">blank</a>', 'append() elle widget')
     
     btn.remove()
     t.equal(body.contains(btn.view), false, 'remove()')

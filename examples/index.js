@@ -25,4 +25,5 @@ require('domready')(function() {
     elle(body)
       .append(text)
       .append(frag)
+      .append('<span>foobar <a href="blah">bazoo</a></span>')
 })

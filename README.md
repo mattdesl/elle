@@ -8,8 +8,7 @@ A DOM utility that wraps a few common features in a chainable structure. Targets
 - set CSS styling (see [dom-css](https://www.npmjs.com/package/dom-css))
 - insertion/removal (see [insert](https://www.npmjs.com/package/insert))
 - add/remove classes (see [dom-classes](https://www.npmjs.com/package/dom-classes))
-- `html()` getter/setter for `innerHTML`
-- `attr()` getter/setter for `setAttribute`
+- aliases for `innerHTML`, `setAttribute/getAttribute` and `parentNode`
 
 Other features are left up to the user to implement or extend (see [examples/](examples/)). 
 
@@ -69,6 +68,7 @@ elle(body)
   - `insertAfter`
   - `appendTo`
   - `prependTo`
+  - `parent`
 - classes
   - `hasClass` returns true if the element has the class
   - `addClass` adds a class 
@@ -120,6 +120,10 @@ Inserts the wrapped target into the specified `target` element. Returns this for
 #### `e.remove()`
 
 Removes this element from its parent. Returns this for chaining.
+
+#### `e.parent()`
+
+Returns the parentNode for the wrapped element.
 
 #### `e.hasClass(name)`
 
