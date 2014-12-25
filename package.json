@@ -1,6 +1,6 @@
 {
   "name": "elle",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "a generic DOM element util",
   "main": "index.js",
   "license": "MIT",
