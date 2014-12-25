@@ -94,7 +94,7 @@ If a string is specified, it will create a different type depending on the conte
 - `"<div>text</div>"` results in a `<div>` with a Text node
 - `"<div></div><div></div>"` results in a DocumentFragment
 
-You can also pass an element (like `document.body` etc) into the constructor to operate on that. 
+You can also pass an element (like `document.body` etc), or any object that contains a `view` node (like elle objects). 
 
 #### `e.view`
 

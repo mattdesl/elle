@@ -1,7 +1,6 @@
 var elle = require('../')
 var test = require('tape').test
 
-var body = document.body
 
 test('constructor methods', function(t) {
         
@@ -11,6 +10,10 @@ test('constructor methods', function(t) {
     
     e = elle(document.body)
     t.equal(e[0], document.body, 'accepts elements')
+
+    var body = elle(document.body)
+    e = elle(body)
+    t.equal(e[0], document.body, 'accepts elle object')
     
     e = elle('text')
     t.ok(e[0] instanceof Text, 'creates a Text node')
