@@ -23,12 +23,13 @@
     "dom-events": "^0.1.1",
     "domready": "^1.0.7",
     "events": "^1.0.2",
+    "faucet": "0.0.1",
     "tape": "^3.0.3",
     "testling": "^1.7.1",
     "xtend": "^4.0.0"
   },
   "scripts": {
-    "test": "browserify test/*.js | testling",
+    "test": "browserify test/*.js | testling | faucet",
     "example-button": "beefy examples/button-test --open",
     "example-event": "beefy examples/event-test --open"
   },
