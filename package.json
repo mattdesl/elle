@@ -1,6 +1,6 @@
 {
   "name": "elle",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "a small DOM element wrapper",
   "main": "index.js",
   "license": "MIT",
