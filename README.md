@@ -68,7 +68,6 @@ elle(body)
   - `insertAfter()`
   - `appendTo()`
   - `prependTo()`
-  - `parent()` - alias for `view.parentNode`
 - classes
   - `hasClass()` 
   - `addClass()`
@@ -78,6 +77,7 @@ elle(body)
   - `css()` - applies dom style with [dom-css](https://www.npmjs.com/package/dom-classes)
   - `attr()` - getter/setter for `setAttribute`
   - `html()` - getter/setter for `innerHTML`
+  - `parent()` - returned a wrapped `parentNode`
   - `view` - returns the underlying DOM node
 
 ## Usage

@@ -34,7 +34,7 @@ Proto.html = property(html)
 Proto.attr = property(attr, 1)
 
 Proto.parent = function() {
-    return this[0].parentNode
+    return Elle(this[0].parentNode)
 }
 
 //class mixins

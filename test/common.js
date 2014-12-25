@@ -9,7 +9,7 @@ test('common methods', function(t) {
     btn.appendTo(body)
     t.equal(body.contains(btn.view), true, 'appendTo()')
 
-    t.equal(btn.parent(), body, 'parent()')
+    t.equal(btn.parent()[0], body, 'parent()')
 
     btn.attr('data-foo', '25')
     t.equal(btn.attr('data-foo'), '25', 'attr() setter/getter')
