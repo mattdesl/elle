@@ -3,7 +3,7 @@
 
 //This is useful when you want full control
 //over the emitter and want to expose an
-//end-user API that may not match DOM event names
+//end-user API that is agnostic of DOM events
 var elle = require('../')
 var events = require('dom-events')
 var Emitter = require('events/')

@@ -27,22 +27,25 @@ Object.defineProperty(Proto, 'view', {
     configurable: true
 })
 
-//class mixins
-Proto.removeClass = wrap(classes.remove)
-Proto.addClass = wrap(classes.add)
-Proto.toggleClass = wrap(classes.toggle)
-
-Proto.hasClass = function(name) {
-    return classes.has(this[0], name)
-}
 
 //misc utils
 Proto.css = wrap(css)
 Proto.html = property(html)
 Proto.attr = property(attr, 1)
 
+//class mixins
+Proto.hasClass = function(name) {
+    return classes.has(this[0], name)
+}
+
+;['remove', 'add', 'toggle']
+    .forEach(function(name) {
+        Proto[name+'Class'] = wrap(classes[name])
+    })
+
 //mixin inserts
-;['remove', 'prepend', 'append', 'before', 'after', 'replace']
+;['remove', 'prepend', 'append', 
+  'before', 'after', 'replace']
     .forEach(function(name) {
         Proto[name] = wrap(insert[name], toElement)
     })
