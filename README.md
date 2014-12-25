@@ -60,24 +60,25 @@ elle(body)
 ## overview
 
 - manipulation
-  - `append`
-  - `prepend`
-  - `before`
-  - `after`
-  - `insertBefore`
-  - `insertAfter`
-  - `appendTo`
-  - `prependTo`
-  - `parent`
+  - `append()`
+  - `prepend()`
+  - `before()`
+  - `after()`
+  - `insertBefore()`
+  - `insertAfter()`
+  - `appendTo()`
+  - `prependTo()`
+  - `parent()` - alias for `view.parentNode`
 - classes
-  - `hasClass` returns true if the element has the class
-  - `addClass` adds a class 
-  - `removeClass` removes a class
-  - `toggleClass` toggles a class on/off
+  - `hasClass()` 
+  - `addClass()`
+  - `removeClass()` 
+  - `toggleClass()`
 - misc
-  - `css` - applies dom style with [dom-css](https://www.npmjs.com/package/dom-classes)
-  - `attr` - getter/setter for `setAttribute`
-  - `html` - getter/setter for `innerHTML`
+  - `css()` - applies dom style with [dom-css](https://www.npmjs.com/package/dom-classes)
+  - `attr()` - getter/setter for `setAttribute`
+  - `html()` - getter/setter for `innerHTML`
+  - `view` - returns the underlying DOM node
 
 ## Usage
 
