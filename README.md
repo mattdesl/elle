@@ -2,7 +2,7 @@
 
 [![stable](http://badges.github.io/stability-badges/dist/stable.svg)](http://github.com/badges/stability-badges)
 
-A DOM utility that wraps a few common features in a chainable structure. Targets modern browsers.
+A tiny DOM utility that wraps a few common features in a chainable structure. Targets modern browsers.
 
 - construct from string template (see [domify](https://www.npmjs.com/package/domify))
 - set CSS styling (see [dom-css](https://www.npmjs.com/package/dom-css))
@@ -12,7 +12,7 @@ A DOM utility that wraps a few common features in a chainable structure. Targets
 
 Other features are left up to the user to implement or extend (see [examples/](examples/)). 
 
-The main purpose is to provide a thin layer for other components/frameworks to build on. 
+The main purpose is to provide a thin layer for other components/frameworks to build on. This is better suited for prototyping and higher-level frameworks, rather than small and focused modules. 
 
 ## example
 
