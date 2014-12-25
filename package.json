@@ -1,0 +1,54 @@
+{
+  "name": "elle",
+  "version": "1.0.0",
+  "description": "a generic DOM element util",
+  "main": "index.js",
+  "license": "MIT",
+  "author": {
+    "name": "Matt DesLauriers",
+    "email": "dave.des@gmail.com",
+    "url": "https://github.com/mattdesl"
+  },
+  "dependencies": {
+    "6to5ify": "^2.0.0",
+    "dom-css": "^1.0.4",
+    "dom-events": "^0.1.1",
+    "domify": "^1.3.1",
+    "inherits": "^2.0.1",
+    "insert": "^1.0.1"
+  },
+  "devDependencies": {
+    "browserify": "^8.0.1",
+    "tape": "^3.0.3",
+    "testling": "^1.7.1"
+  },
+  "scripts": {
+    "test-events": "beefy test/events.js --open",
+    "test": "browserify test/*.js | testling"
+  },
+  "keywords": [
+    "element",
+    "dom",
+    "elements",
+    "jquery",
+    "query",
+    "modular",
+    "not-jquery",
+    "event",
+    "events",
+    "insert"
+  ],
+  "browserify": {
+    "transform": [
+      "6to5ify"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mattdesl/elle.git"
+  },
+  "homepage": "https://github.com/mattdesl/elle",
+  "bugs": {
+    "url": "https://github.com/mattdesl/elle/issues"
+  }
+}
