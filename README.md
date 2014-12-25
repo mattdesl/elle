@@ -124,7 +124,7 @@ Removes this element from its parent. Returns this for chaining.
 
 #### `e.parent()`
 
-Returns the parentNode for the wrapped element.
+Returns the parent node, also wrapped as an `elle` object.
 
 #### `e.hasClass(name)`
 
