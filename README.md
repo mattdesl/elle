@@ -2,7 +2,7 @@
 
 [![stable](http://badges.github.io/stability-badges/dist/stable.svg)](http://github.com/badges/stability-badges)
 
-A DOM utility that wraps common features:
+A DOM utility that wraps a few common features:
 
 - construct from template (see [domify](https://www.npmjs.com/package/domify))
 - styling (see [dom-css](https://www.npmjs.com/package/dom-css))
