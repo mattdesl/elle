@@ -1,9 +1,7 @@
 var elle = require('../')
 var test = require('tape').test
 
-
 test('constructor methods', function(t) {
-        
     var e = elle()
     t.equal(e.html(), '', 'empty html')
     t.ok(/div/i.test(e[0].tagName), 'creates a div')
