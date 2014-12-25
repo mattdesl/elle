@@ -4,10 +4,12 @@
 
 A DOM utility that wraps a few common features:
 
-- construct from template (see [domify](https://www.npmjs.com/package/domify))
-- styling (see [dom-css](https://www.npmjs.com/package/dom-css))
+- construct from string template (see [domify](https://www.npmjs.com/package/domify))
+- set CSS styling (see [dom-css](https://www.npmjs.com/package/dom-css))
 - insertion/removal (see [insert](https://www.npmjs.com/package/insert))
 - add/remove classes (see [dom-classes](https://www.npmjs.com/package/dom-classes))
+- chainable `html()` getter/setter for `innerHTML`
+- chainable `attr()` getter/setter for `setAttribute`
 
 Other features are left up to the user to implement or extend (see [examples/](examples/)). 
 
